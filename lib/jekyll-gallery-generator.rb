@@ -264,6 +264,10 @@ module Jekyll
         puts "#{gallery_name}: best_image #{best_image} not found!"
         gallery_date_time = 0
       end
+
+      # Read file names to have tags under
+      self.data["image_filenames"] = gallery_config["image_filenames"].split("::")
+      self.data["image_names"] = gallery_config["image_names"].split("::")
       self.data["date_time"] = gallery_date_time
 
       self.data["info"] = gallery_config["info"] if gallery_config.key?("info")
